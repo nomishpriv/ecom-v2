@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 // import the plugin
-import eslintPlugin from 'vite-plugin-eslint';
+import eslintPlugin from "vite-plugin-eslint";
 
 export default defineConfig({
   plugins: [
@@ -9,14 +9,15 @@ export default defineConfig({
     eslintPlugin({
       // setup the plugin
       cache: false,
-      include: ['./src/**/*.js', './src/**/*.jsx'],
+      include: ["./src/**/*.js", "./src/**/*.jsx"],
       exclude: [],
     }),
   ],
+  base: "/ecom-v2",
   server: {
     proxy: {
-      '/api': 'http://localhost:5000',
-      '/uploads': 'http://localhost:5000',
+      "/api": "http://localhost:5000",
+      "/uploads": "http://localhost:5000",
     },
   },
 });
